@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      
+
+      const principal = 10000;
+const interestRate = 5;
+const numYears = 10;
+        // Example for loop function that calculates the total value of investments over time
+  function createObjs(principal,interestRate,numYears) {
+  
+  this.principal =  principal;
+  this.interestRate = interestRate;
+  this.numYears = numYears;
+  // No need to return, but you can use `return this;` if you want
+  return this.principal+" "+this.interestRate+" "+this.numYears;
+}
+
+let obj = {
+  "principal": principal,
+  "interestRate": interestRate,
+  "numYears": numYears
+}
+
+
+function calculateInvestmentValue(principal, interestRate, numYears) {
+  let totalValue = principal;
+  for (let i = 1; i <= numYears; i++) {
+    totalValue += totalValue * (interestRate / 100);
+  }
+  return totalValue;
+}
+
+// Example usage of the function
+
+const investmentValue = calculateInvestmentValue(principal, interestRate, numYears);
+
+console.log(`With an initial investment of $${principal} and an interest rate of ${interestRate}%, the investment would be worth $${investmentValue.toFixed(2)} after ${numYears} years.)`);
+console.log(createObjs(obj.principal, obj.interestRate, obj.numYears));
+   </script>
+</head>
+<body>
+    <h1>Open console and you will see results of functions</h1>
+</body>
+</html>

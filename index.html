@@ -9,24 +9,18 @@
       
 
       const principal = 10000;
-const interestRate = 5;
+  const interestRate = 5;
 const numYears = 10;
         // Example for loop function that calculates the total value of investments over time
-  function createObjs(principal,interestRate,numYears) {
+  function createObject(principal,interestRate,numYears) {
   
-  this.principal =  principal;
-  this.interestRate = interestRate;
-  this.numYears = numYears;
-  // No need to return, but you can use `return this;` if you want
-  return this.principal+" "+this.interestRate+" "+this.numYears;
-}
-
-let obj = {
+  let obj = {
   "principal": principal,
   "interestRate": interestRate,
   "numYears": numYears
+  }
+  return obj;
 }
-
 
 function calculateInvestmentValue(principal, interestRate, numYears) {
   let totalValue = principal;
@@ -36,12 +30,11 @@ function calculateInvestmentValue(principal, interestRate, numYears) {
   return totalValue;
 }
 
-// Example usage of the function
-
-const investmentValue = calculateInvestmentValue(principal, interestRate, numYears);
+object = createObject(principal, interestRate, numYears)
+const investmentValue = calculateInvestmentValue(object.principal, object.interestRate, object.numYears);
 
 console.log(`With an initial investment of $${principal} and an interest rate of ${interestRate}%, the investment would be worth $${investmentValue.toFixed(2)} after ${numYears} years.)`);
-console.log(createObjs(obj.principal, obj.interestRate, obj.numYears));
+console.log(object.principal, object.interestRate, object.numYears);
    </script>
 </head>
 <body>
